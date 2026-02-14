@@ -18,8 +18,8 @@ body {
 
 /* Carte principale */
 .carte {
-    width: 100%;
-    max-width: 420px;
+    width: 95vw;           /* prend presque toute la largeur écran portrait */
+    max-width: 420px;      /* limite sur grand écran */
     background: #fff;
     border-radius: 25px;
     overflow: hidden;
@@ -36,8 +36,8 @@ body {
 
 /* Photo */
 .photo {
-    width: 100%;             /* prend toute la largeur de la carte */
-    height: 180px;           /* hauteur réduite pour mobile */
+    width: 100%;
+    height: 35vw;          /* hauteur proportionnelle à la largeur pour portrait */
     margin-bottom: 20px;
     border-radius: 15px;
     background: url("PALP.png") center center no-repeat;
@@ -54,18 +54,18 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 22px;
-    font-size: 24px;
+    font-size: 5vw;   /* s’adapte à la largeur écran */
     color: #333;
 }
 
 /* Select */
 select {
     width: 100%;
-    padding: 16px;
+    padding: 4vw;       /* adaptable à l’écran portrait */
     margin-bottom: 18px;
     border-radius: 14px;
     border: 2px solid #f0f0f0;
-    font-size: 16px;
+    font-size: 4vw;
     background: #fffaf6;
 }
 
@@ -77,12 +77,12 @@ select:focus {
 /* Bouton */
 button {
     width: 100%;
-    padding: 18px;
+    padding: 4vw;
     border-radius: 14px;
     border: none;
     background: linear-gradient(135deg, #ff512f, #dd2476);
     color: white;
-    font-size: 18px;
+    font-size: 4.5vw;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 6px 18px rgba(221,36,118,0.45);
@@ -97,40 +97,30 @@ button:active {
     transform: scale(0.97);
 }
 
-/* MOBILE OPTIMISÉ */
-@media (max-width: 480px) {
+/* Portrait spécifique */
+@media (orientation: portrait) {
     .carte {
-        width: 95%;            /* carte presque plein écran sur mobile */
-        padding: 15px;
+        width: 95vw;       /* quasi plein écran portrait */
+        padding: 5vw;
     }
 
     .photo {
-        height: 200px;        /* plus grande pour mobile */
-        margin-bottom: 20px;
+        height: 40vw;      /* photo plus haute en portrait */
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 6vw;
     }
 
     select, button {
-        font-size: 17px;      /* texte plus grand pour toucher facilement */
-        padding: 16px;
+        font-size: 4.5vw;
+        padding: 4vw;
     }
 }
 
-/* Écran très petit */
-@media (max-width: 360px) {
+/* Horizontal */
+@media (orientation: landscape) {
     .photo {
-        height: 180px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 14px;
+        height: 35vw;
     }
 }
